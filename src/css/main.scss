@@ -1,0 +1,368 @@
+@mixin size($height, $color){
+    height: $height;
+    border: 1px solid $color;
+}
+
+.main{
+    // border: 3px solid red;
+    height: 100%;
+    display: flex;
+    >div.left{
+        width: 25%;
+        // border-right: 1px solid rgb(230, 230, 230);
+        >div.header{
+          @include size(6%, rgb(240, 240, 240));
+          background-color: #ECECEC;
+          background-color: white;
+          display: flex;
+          align-items: center;
+
+          >*{
+            margin: 5px;
+          }
+          div.button{
+            width: 30px;
+            padding: 5px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: max-content;
+            >div{
+                width: 90%;
+                border: 1px solid rgb(50, 50, 50);
+                margin: 2px;
+            }
+          }
+          input{
+            flex-grow: 1;
+            padding: 7px;
+            border:none;
+            background-color: rgb(240, 240, 240);
+            border-radius: 3px;
+          }
+        }
+        // messages and contact
+        >div.center{
+            @include size(86%, transparent);
+            background-color: #ECECEC;
+            background-color: white;
+            >div.messages{ 
+                a{
+                    display: block;
+                    width: 100%;
+                    text-decoration: none;
+                    color: rgb(50, 50, 50);
+                    height: max-content;
+                    padding: 8px 10px;
+                    border-bottom: 0.5px solid rgb(240, 240, 240);
+                    div.message-div{
+                        display: flex;
+                        height: 50px;
+                        >*{
+                        }
+                        >div.left{
+                            display: flex;
+                            align-items: center;
+                            >div.image{
+                                display: block;
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 50%;
+                                background-image: url('../images/user1.jpeg');
+                                background-position:top;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                            }
+                        }
+                        >div.center{
+                            flex-grow: 1;
+                            padding-left: 10px;
+                          >*{
+                          }
+                          >.username{
+                                font-size: 15px;
+                                color: rgb(50, 50, 50);
+                                // color: blue;
+                          }
+                          >.last-message{
+                                font-size: 13px;
+                                color: rgb(150, 150, 150);
+                                padding-top: 10px;
+                                text-overflow: ellipsis;
+                                overflow: hidden; 
+                                width: 200px; 
+                                white-space: nowrap;
+                                >i{
+                                    color: #356CD2;
+                            }
+                          }
+                        }
+                        >div.right{
+                            flex-basis: 10%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            
+                            >*{
+                            }
+                            >.date{
+                                font-size: 13px;
+                                color: rgb(100, 100, 100);
+                            }
+                            >.messages{
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 20px;
+                                height: 20px;
+                                font-size: 11px;
+                                color: #565656;
+                                margin-top: 13px;
+                                padding: 2px 4px;
+                                border-radius: 10px;
+                                background-color: #356CD2;
+                                color: white;
+                                
+                            }
+                           
+                        }
+                    }
+                    &:hover{
+                        background-color: #F5F5F5;
+                        background-color: #356CD2;
+                        *{
+                            color: white !important ;
+                        }
+                        .messages{
+                            background-color: #ECECEC !important;
+                            color: #356CD2 !important;
+                        }
+                        
+                    }
+                }
+                    
+            }
+            
+        }
+        >div.footer{
+            @include size(8%, white);
+            border-top: 1px solid rgb(240, 240, 240);
+            display: flex;
+            >label{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 20%;
+                font-size: 20px;
+                >input{
+                    display: none;
+                }
+                i{
+                    padding: 15px;
+                    border-radius: 10px;
+                    color: rgb(50, 50, 50);
+                    cursor: pointer;
+                    
+                    &:hover{
+                        background-color: #D2ECFF;
+                    }
+                }
+            }
+        }
+    }
+    >div.right{
+        width: 75%;
+        background-color: rgb(240, 240, 240);
+        >div.welecome{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            >*{
+                display: flex;
+                justify-content: center;
+                width: 50%;
+                margin: 5px;
+            }
+            >h1.welecome{
+                color: rgb(100, 100, 100);
+            }
+            >div.desc{
+                color: rgb(130, 130, 130);
+            }
+            >i{
+                background-color: transparent;
+                font-size: 200px;
+                color: #356CD2;
+            }
+        }
+        >div.messages{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            >div.head{
+                height: 6%;
+                width: 100%;
+                display: flex;
+                background-color: white;
+                padding: 0 10px;
+                >div.left{
+                    flex-grow: 1;
+                    display: flex;
+                    div.image-div{
+                        // border: 1px solid red;
+                        width: 5%;
+                        padding: 5px;
+                        display: flex;
+                        align-items: center;
+                        >div.image{
+                            border-radius: 50%;
+                            height: 38px;
+                            width: 38px;
+                            background-image: url('../images/user1.jpeg');
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: top;
+                        }
+                    }
+                    div.about{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        >*{
+                            // border: 1px solid red;
+                            margin: 2px;
+                        }
+                        >div.username{
+                            font-size: 13px;
+                            // font-weight: bold;
+                        }
+                        >div.date-ago{
+                            font-size: 12px;
+                            color: #959595;
+                        }
+                    }
+                }
+                >div.right{
+                    display: flex;
+                    align-items: center;
+                    >div{
+                        margin: 15px;
+                        cursor: pointer;
+                        &:hover{
+                            color: #356CD2;
+                        }
+                    }
+                }
+            }
+            >div.main{
+                width: 100%;
+                height: 94%;
+                display: flex;
+                justify-content: center;
+                background-image: url('../images/back.png');
+                background-repeat: repeat;
+                >div.all-messages{
+                    width: 70%;
+                    position: relative;
+
+                    >div.read-messages{
+                        height: 88%;
+                        overflow: scroll;
+                        padding: 0 10px;
+                        >*{
+                            font-size: 13px;
+                            color: rgb(50, 50, 50);
+                            display: flex;
+                            >div{
+                                width: max-content;
+                                max-width: 50%;
+                                margin: 5px;
+                                padding: 10px;
+                                border-radius: 10px;
+                            }
+                        }
+                        >div.my-message{
+                            justify-content: right;
+                            >div{
+                                background-color: #F1F9FF;
+
+                            }
+                        }
+                        >div.target-message{
+                            >div{
+                                background-color: white;
+                            }
+                        }
+                    }
+                    >div.write-messages{
+                        height: 10%;
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        position: absolute;
+                        bottom: 20px;
+                        >*{
+                            display: block;
+                            padding: 10px;
+                            margin: 5px;
+                        }
+                        >textarea{
+                            width: 100%;
+                            height: 40px;
+                            resize: none;
+                            border-radius: 10px;
+                            border: none;
+                        }
+                        
+                        >i{
+                            background-color: #356CD2;
+                            color: white;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 50px;
+                            height: 45px;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .main{
+        >div.left{
+            width: 55%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+            >div.footer{
+                background-color: white;
+            }
+        }
+        >div.right{
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 500px){
+    .main{
+        >div.left{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+        >div.right{
+            width: 100%;
+        }
+    }
+}
