@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import Main from './components/Main';
-import { Messages,Welecome } from './components/Main';
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { Messages, Welecome } from './components/Main';
+import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
 
