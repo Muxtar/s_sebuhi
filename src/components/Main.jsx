@@ -1,10 +1,8 @@
-import { NavLink, useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { Outlet } from 'react-router-dom';
+import { NavLink, useParams, Outlet } from 'react-router-dom';
 import '../css/main.css';
 
 function Messages(){
-    let {url} = useParams('url');
+    const { url } = useParams();
     return(
         <div className="messages">
             <div className="head">
